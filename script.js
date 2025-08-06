@@ -19,7 +19,7 @@ function STMS(seconds) {
 
 async function getSongs(folder) {
   currFolder = folder;
-  let a = await fetch(`http://192.168.185.158:3000/${folder}/`);
+  let a = await fetch(`http://192.168.197.158:3000/${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -32,7 +32,7 @@ async function getSongs(folder) {
       songs.push(element.href.split(`/${folder}/`)[1]);
     }
   }
-   let b = await fetch(`http://192.168.185.158:3000/Author.json`)
+   let b = await fetch(`http://192.168.197.158:3000/Author.json`)
    let response2 = await b.json()
 
   let songUL = document.querySelector(".songplaylist").getElementsByTagName("ul")[0]
@@ -114,7 +114,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function DisplayAlbums() {
-  let b = await fetch(`http://192.168.185.158:3000/songs/`);
+  let b = await fetch(`http://192.168.197.158:3000/songs/`);
   let response2 = await b.text();
   let div2 = document.createElement("div");
   div2.innerHTML = response2;
@@ -124,7 +124,7 @@ async function DisplayAlbums() {
     const e = array[index];
     if (e.href.includes("/songs")) {
       let folder = e.href.split("/").slice(-2)[0]
-      let b = await fetch(`http://192.168.185.158:3000/songs/${folder}/info.json`)
+      let b = await fetch(`http://192.168.197.158:3000/songs/${folder}/info.json`)
       let response2 = await b.json()
       listofsong.innerHTML = listofsong.innerHTML + `<li data-folder="${response2.folder}" class="playlist">
             <div class="info">
