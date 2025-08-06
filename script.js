@@ -4,6 +4,7 @@ let songs;
 let currFolder;
 var media = window.matchMedia("(min-width: 851px)");
 
+//This code convert seconds into minute second format
 function STMS(seconds) {
   if (isNaN(seconds) || seconds < 0) {
     return "Invaild input"
@@ -32,12 +33,13 @@ async function getSongs(folder) {
       songs.push(element.href.split(`/${folder}/`)[1]);
     }
   }
-   let b = await fetch(`http://192.168.197.158:3000/Author.json`)
-   let response2 = await b.json()
 
   let songUL = document.querySelector(".songplaylist").getElementsByTagName("ul")[0]
   songUL.innerHTML = ""
   for (const song of songs) {
+    let a = song.split("%20")[0]
+    let b = await fetch(`http://192.168.197.158:3000/Author.json`)
+    let response2 = await b.json()
     songUL.innerHTML = songUL.innerHTML + `<li class="songcard relative">
             <img src="${Getimage(song)}">
             <div class="centre"
@@ -50,7 +52,7 @@ async function getSongs(folder) {
               </svg>
             </div>
             <div class="title">${song.replaceAll("%20", " ").replaceAll(".mp3", "")}</div>
-            <span class="author see cursor"></span>
+            <span class="author see cursor">${response2[a]}</span>
           </li>`
   }
   Array.from(document.querySelector(".songtable").getElementsByTagName("li")).forEach(e => {
@@ -112,7 +114,7 @@ const playMusic = (track, pause = false) => {
   document.querySelector(".songimage").firstElementChild.src = Getimage(track);
 }
 
-
+//This is to change playlist
 async function DisplayAlbums() {
   let b = await fetch(`http://192.168.197.158:3000/songs/`);
   let response2 = await b.text();
@@ -137,7 +139,7 @@ async function DisplayAlbums() {
             </div>
           </li>`
     }
-  
+
   }
 
   Array.from(document.getElementsByClassName("playlist")).forEach(e => {
@@ -215,20 +217,21 @@ async function main() {
   document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
     currentsong.volume = parseInt(e.target.value) / 100
   })
-
+//This is used to play the previous Song in playlist
   previous.addEventListener("click", () => {
     let index = songs.indexOf(currentsong.src.split("/").slice(-1)[0]);
     if (index >= 1) {
       playMusic(songs[index - 1])
     }
   })
+  //This is used to play the next Song in playlist
   next.addEventListener("click", () => {
     let index = songs.indexOf(currentsong.src.split("/").slice(-1)[0]);
     if ((index + 1) < songs.length) {
       playMusic(songs[index + 1])
     }
   })
-
+//Incrase or decrease the volume using a slider
   document.querySelector(".volume").firstElementChild.addEventListener("click", e => {
     if (e.target.src.includes("Volume.svg")) {
       e.target.src = e.target.src.replace("Volume.svg", "Muted.svg");
