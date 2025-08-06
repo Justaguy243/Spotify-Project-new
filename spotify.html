@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Web Player: Music for everyone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="utility.css">
+  <link rel="stylesheet" href="test.css">
+  <link rel="icon" type="image/x-icon" href="SVG/spotifylofo.svg">
+  <link href="SpotifyMix-Regular.woff" as="font" type="font/woff2" crossorigin>
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-black mg-none pd-none">
+  <nav class="flex align-items-c justify-content-sb flex-direction-row bg-black">
+    <div class="left-nav flex justify-content-sb align-items-c bg-black">
+      <a href="/spotifyclone.html"><img class="logo invert" src="SVG/spotifylofo.svg"></a>
+      <div class="home-search flex justify-content-sb align-items-c flex-direction-row">
+        <button class="home bg-grey rounded cursor">
+          <img class="invert" src="SVG/hamburger.svg">
+        </button>
+        <input class="search bg-grey" placeholder="What do you want to play"></input>
+        <img>
+      </div>
+    </div>
+    <div class="right-nav bg-black flex align-items-c">
+      <div class="feature flex align-items-c justify-content-c">
+        <div class="see rounded cursor">Sign up</div>
+        <button class="rounded cursor bold">Log in</button>
+      </div>
+    </div>
+  </nav>
+  <header class="grid grid-template-c2">
+    <div class="leftbar bg-grey rounded-s">
+      <button class="cross absolute cursor rounded "><img src="SVG/Cross.svg" class="invert"></button>
+      <div class="library flex justify-content-sb">
+        <p>Your Library</p>
+        <p></p>
+      </div>
+      <!-- <div class="playlist bg-gray rounded-s ">
+          <p>Create your first playlist</p>
+          <p>It's easy,we'll help you</p>
+          <button class="rounded add cursor"><span class="bold">Create playlist</span></button>
+        </div> -->
+      <div class="librarySong">
+        <ul id="listofsong" class="listofsong">
+        </ul>
+      </div>
+      <div class="aboutus grid grid-template-r2 grid-template-c4">
+        <div>Legal</div>
+        <div>Safefy&privacy Center</div>
+        <div>Privacy Polices</div>
+        <div>Cookies</div>
+        <div>About Ads</div>
+        <div>Accessibility</div>
+      </div>
+      <div class="Creator absolute">Made By: Just A Guy 404</div>
+    </div>
+    <div class="right-bar bg-grey rounded-s">
+      <h2>My playlist</h2>
+      <div class="songplaylist relative pd-none mg-none">
+        <ul class="songtable">
+
+        </ul>
+      </div>
+    </div>
+    <div class="playbar absolute">
+      <div class="abovebar flex justify-content-sb align-items-c">
+        <div class="imageinfo flex">
+          <div class="songimage"><img src=""></div>
+          <div class="songinfo"></div>
+        </div>
+        <div class="songbuttons flex justify-content-c invert">
+          <img id="previous" src="SVG/Previous.svg">
+          <img id="play" src="SVG/Play1.svg">
+          <img id="next" src="SVG/Next.svg">
+        </div>
+        <div class="VAT flex ">
+          <div class="volume"><img src="SVG/Volume.svg" class="invert">
+            <div class="range">
+              <input type="range" name="volume" id="">
+            </div>
+          </div>
+          <div class="songduration"></div>
+        </div>
+      </div>
+      <div class="seekbar absolute">
+        <div class="circle relative"></div>
+      </div>
+    </div>
+  </header>
+  <script src="script.js"></script>
+</body>
+
+</html>

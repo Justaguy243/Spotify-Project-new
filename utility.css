@@ -1,0 +1,137 @@
+.flex {
+  display: flex;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-c {
+  flex-direction: column;
+}
+
+.justify-content-sb {
+  justify-content: space-between;
+}
+.justify-content-c {
+  justify-content: center;
+}
+
+.align-items-c {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-template-c4 {
+  grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.grid-template-c3 {
+  grid-template-columns:1fr 1fr 1fr ;
+}
+.grid-template-c2 {
+  grid-template-columns:1fr 1fr ;
+}
+.grid-template-r2 {
+  grid-template-rows:1fr 1fr ;
+}
+
+.bg-grey {
+  background-color: #121212;
+}
+
+.bg-gray {
+background-color: rgb(31,31,31);
+}
+
+.bg-black {
+  background-color: black;
+  color: white;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.rounded {
+  border-radius: 25px;
+}
+
+.rounded-s {
+  border-radius: 15px;
+}
+
+.mg-none {
+  margin: 0;
+}
+
+.pd-none {
+  padding: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.leff {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 0;
+}
+
+.see {
+  opacity: 0.6;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.index {
+  z-index: 3;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+::-webkit-scrollbar {
+ background-color: #18181c;
+ z-index: 1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #31313d;
+  z-index: 1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #44445a;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #31313d #12121c;
+}
