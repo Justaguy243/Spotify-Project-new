@@ -124,7 +124,7 @@ async function DisplayAlbums() {
   let array = Array.from(anchors)
   for (let index = 0; index < array.length; index++) {
     const e = array[index];
-    if (e.href.includes("/songs")) {
+    if (e.href.includes("/songs") && !e.href.includes(".htaccess") {
       let folder = e.href.split("/").slice(-2)[0]
       let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new/songs/${folder}/info.json`)
       let response2 = await b.json()
@@ -154,7 +154,7 @@ async function DisplayAlbums() {
 
 async function main() {
   await getSongs("https://justaguy243.github.io/Spotify-Project-new/songs/Favourite")
-  playMusic(songs[0]);
+  playMusic(songs[0], true);
 
   await DisplayAlbums()
 
