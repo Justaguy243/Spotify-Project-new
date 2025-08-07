@@ -38,7 +38,7 @@ async function getSongs(folder) {
   songUL.innerHTML = ""
   for (const song of songs) {
     let a = song.split("%20")[0]
-    let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new//Author.json`)
+    let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new/Author.json`)
     let response2 = await b.json()
     songUL.innerHTML = songUL.innerHTML + `<li class="songcard relative">
             <img src="${Getimage(song)}">
@@ -116,7 +116,7 @@ const playMusic = (track, pause = false) => {
 
 //This is to change playlist
 async function DisplayAlbums() {
-  let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new//songs/`);
+  let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new/songs/`);
   let response2 = await b.text();
   let div2 = document.createElement("div");
   div2.innerHTML = response2;
@@ -153,7 +153,7 @@ async function DisplayAlbums() {
 
 
 async function main() {
-  await getSongs("songs/Favourite")
+  await getSongs("https://justaguy243.github.io/Spotify-Project-new/songs/Favourite")
   playMusic(songs[0].trim(), true);
 
   await DisplayAlbums()
