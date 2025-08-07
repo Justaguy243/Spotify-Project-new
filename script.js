@@ -154,7 +154,7 @@ async function DisplayAlbums() {
 
 async function main() {
   await getSongs("songs/Favourite")
-  playMusic(songs[0].trim(), true);
+  playMusic(songs[0], true);
 
   await DisplayAlbums()
 
