@@ -38,7 +38,7 @@ async function getSongs(folder) {
   songUL.innerHTML = ""
   for (const song of songs) {
     let a = song.split("%20")[0]
-    let b = await fetch(`/Author.json`)
+    let b = await fetch(`https://github.com/Justaguy243/Spotify-Project-new/Author.json`)
     let response2 = await b.json()
     songUL.innerHTML = songUL.innerHTML + `<li class="songcard relative">
             <img src="${Getimage(song)}">
@@ -116,7 +116,7 @@ const playMusic = (track, pause = false) => {
 
 //This is to change playlist
 async function DisplayAlbums() {
-  let b = await fetch(`/songs/`);
+  let b = await fetch(`https://github.com/Justaguy243/Spotify-Project-new/songs/`);
   let response2 = await b.text();
   let div2 = document.createElement("div");
   div2.innerHTML = response2;
@@ -126,7 +126,7 @@ async function DisplayAlbums() {
     const e = array[index];
     if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
       let folder = e.href.split("/").slice(-2)[0]
-      let b = await fetch(`/songs/${folder}/info.json`)
+      let b = await fetch(`https://github.com/Justaguy243/Spotify-Project-new/songs/${folder}/info.json`)
       let response2 = await b.json()
       listofsong.innerHTML = listofsong.innerHTML + `<li data-folder="${response2.folder}" class="playlist">
             <div class="info">
