@@ -110,7 +110,7 @@ const playMusic = (track, pause = false) => {
   ${STMS(currentsong.currentTime)}/00:00
   </div>`
 
-  document.querySelector(".songinfo").innerHTML = decodeURI(track.replaceAll(".mp3", " "));
+  document.querySelector(".songinfo").innerHTML = decodeURI(track);
   document.querySelector(".songimage").firstElementChild.src = Getimage(track);
 }
 
