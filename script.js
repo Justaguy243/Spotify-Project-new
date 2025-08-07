@@ -126,7 +126,7 @@ async function DisplayAlbums() {
     const e = array[index];
     if (e.href.includes("/songs")) {
       let folder = e.href.split("/").slice(-2)[0]
-      let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new//songs/${folder}/info.json`)
+      let b = await fetch(`https://justaguy243.github.io/Spotify-Project-new/songs/${folder}/info.json`)
       let response2 = await b.json()
       listofsong.innerHTML = listofsong.innerHTML + `<li data-folder="${response2.folder}" class="playlist">
             <div class="info">
