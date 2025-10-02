@@ -30,7 +30,7 @@ async function getSongs(folder) {
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href.split(`/${folder}/`)[1]);
+      songs.push(element.href.split(`%5C${folder.split("/")[1]}%5C`)[1]);
     }
   }
 
@@ -126,7 +126,7 @@ async function DisplayAlbums() {
     const e = array[index];
     if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
       let folder = e.href.split("/").slice(-2)[0]
-      let b = await fetch(`/songs/${folder}/info.json`)
+      let b = await fetch(`/${folder}/info.json`)
       let response2 = await b.json()
       listofsong.innerHTML = listofsong.innerHTML + `<li data-folder="${response2.folder}" class="playlist">
             <div class="info">
