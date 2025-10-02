@@ -95,6 +95,7 @@ const Removestyle2 = (e) => {
 }
 
 const Getimage = (image) => {
+  console.log(image);
   let haveimage = "spotify79/spotify_images/" + image.replaceAll("%20", " ").replaceAll(".mp3", ".jpg");
   return haveimage;
 }
